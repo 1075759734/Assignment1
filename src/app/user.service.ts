@@ -36,7 +36,13 @@ export class UserService {
     }
 
     upper(user: User) {
-        user.role = "admin";
+        if (user.role === 'user') {
+            user.role = 'groupaAssit'
+        } else if (user.role === 'groupaAssit') {
+            user.role = 'groupAdmin'
+        } else if (user.role === 'groupAdmin') {
+            user.role = 'super'
+        }
     }
 
     addToGroup(user: User, group: string){

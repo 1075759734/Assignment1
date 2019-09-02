@@ -1,12 +1,1 @@
 <p>group works!</p>
-<h1>Hi the current user: {{currentUser.username}}!</h1>
-<p>You're logged in!</p>
-<h3>All registered users:</h3>
-
-<ul>
-    <li *ngFor="let user of users">
-        {{user.username}} ({{user.firstName}} {{user.lastName}}) {{ user.role }}
-        - <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
-        - <a (click)="upperUser(user)" class="text-danger">Upper</a>
-    </li>
-</ul>

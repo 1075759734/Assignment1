@@ -8,7 +8,7 @@ import { AlertService } from '../alert.service';
 import { AuthenticationService } from '../authentication.service';
 
 @Component({
-  selector: 'app-register',
+  selector: 'app-register2',
   templateUrl: './register2.component.html',
   styleUrls: ['./register2.component.css']
 })

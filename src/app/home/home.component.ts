@@ -60,7 +60,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
     upperUser(user: User) {
         this.userService.upper(user);
-          this.loadAllUsers();
+        this.loadAllUsers();
         
     }
     addToGroup(user: User) {
