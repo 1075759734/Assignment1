@@ -1,0 +1,70 @@
+
+<h1>Hi the current user: {{currentUser.username}}!</h1>
+<p>You're logged in!</p>
+<h3 *ngIf="isSuper">All registered users:</h3>
+
+<table class="" *ngIf="isSuper">
+    <thead>
+    <tr>
+        <th width="10">name</th>
+        <th width="50">email</th>
+        <th width="50">group</th>
+        <th width="50">role</th>
+        <th width="50">operate</th>
+        <th >change</th>
+    </tr>
+</thead>
+<tbody>
+    <tr class="" *ngFor="let user of users"> 
+        <td>{{user.username}} </td>
+        <td>{{user.email}} </td> 
+        <td>{{user.group}}  </td> 
+        <td>{{user.role }}</td>
+        <td width="200">
+         <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
+        - <button (click)="upperUser(user)" class="">Upper</button>
+        
+        </td>
+        <td>
+            <button (click)="addToGroup(user)" class="" *ngIf="isSuper">addToGroup</button>
+            <select  class="col-sm-3 form-control " style="width:200px;" [(ngModel)]="groupName" name="groupName">
+                    <option [ngValue]=""></option>
+                    <option class="col-md-1" *ngFor="let group of groups" [value]="group.name">{{group.name}}</option>
+            </select>
+            
+        </td>
+    </tr>
+    
+</tbody>
+</table>
+
+<!-- <table>
+    <tr>
+        <td> 123</td>
+        <td> 212</td>
+    </tr>
+ 
+</table> -->
+
+<div class="badge">
+    
+    
+
+    <div *ngIf="isSuper">
+        <h4>All created groups:</h4>
+
+        <ul class="heroes">
+            <li *ngFor="let group of groups">
+                {{group.name}} {{group.id}}
+                - <a (click)="deleteGroup(group.id)" class="text-danger">Delete</a>
+                <!-- - <a (click)="upperUser(user)" class="">Upper</a> -->
+        
+            </li>
+        </ul>
+    </div>
+ 
+</div>
+
+<div>
+    you are in group: {{currentUser.group}}
+</div>
